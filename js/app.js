@@ -86,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const itemCountElement = document.getElementById("item-count");
   const itemTotalElement = document.querySelector(".item-total");
 
-  // Function to recalculate the cart total and item count
   const recalculateCartInfo = () => {
     let total = 0;
     const prices = cart.querySelectorAll(".cart-item-price");
@@ -94,25 +93,40 @@ document.addEventListener("DOMContentLoaded", () => {
       total += parseFloat(priceElement.textContent);
     });
 
-    const itemCount = prices.length; // Total number of items
-
-    // Update the cart total and item count
+    const itemCount = prices.length;
     cartTotalElement.textContent = total.toFixed(2);
     itemCountElement.textContent = itemCount;
     itemTotalElement.textContent = total.toFixed(2);
   };
-
-  // Event listener for removing cart items
   cart.addEventListener("click", (event) => {
     if (event.target.closest(".cart-item-remove")) {
       const cartItem = event.target.closest(".cart-item");
       if (cartItem) {
-        cartItem.remove(); // Remove the cart item
-        recalculateCartInfo(); // Update cart total and item count
+        cartItem.remove();
+        recalculateCartInfo();
       }
     }
   });
 
-  // Initialize the total and item count on page load
   recalculateCartInfo();
 });
+
+var findItem = document.getElementById("search-item");
+var searchIcon = document.getElementById("search-icon");
+const storeItems = document.querySelectorAll(".store-item");
+
+searchIcon.addEventListener("click", findThings);
+
+function findThings() {
+  var text = findItem.value.toLowerCase();
+  storeItems.forEach(function (item) {
+    var itemName = item
+      .querySelector("#store-item-name")
+      .textContent.toLowerCase();
+    if (itemName.includes(text)) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
+  });
+}
