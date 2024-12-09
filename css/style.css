@@ -114,6 +114,15 @@ body {
 #cart-item-price {
   font-size: 0.8rem;
 }
+
+.card:hover {
+  background-color: black;
+  color: rgb(239, 121, 152);
+  transition: background-color 0.3s ease;
+  border: 0px;
+  box-shadow: 0 0 15px 10px rgba(239, 121, 152, 0.5);
+}
+
 /* cart item */
 /* cart buttons */
 .btn-pink {
