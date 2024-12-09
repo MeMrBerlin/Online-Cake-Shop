@@ -5,13 +5,26 @@
   padding: 20px 10px;
   text-align: center;
   display: grid;
-  grid-template-columns: 100px 100px 1fr;
+  grid-template-columns: 150px 150px 1fr;
   justify-content: space-evenly;
   align-items: center;
   height: 300px;
   padding-left: 220px;
 }
 
+.Help {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 10px;
+  margin-right: 50px;
+  height: 100px;
+  width: 200px;
+}
+
+.Help:hover {
+  color: #f0a500;
+}
 /* Links inside the divs */
 .aboutUs a {
   color: white;
@@ -31,15 +44,24 @@
   margin-right: 20px;
 }
 
-.social-media-icon {
+.Social-media {
   margin: 0 8px; /* Optional spacing between icons */
   fill: #ffffff; /* Default color (white) */
   transition: fill 0.3s ease-in-out;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  padding-bottom: 20px;
 }
 
+.Social-media-logo {
+  padding: 0px 0px 0px 0px;
+}
+.example-2 {
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+}
 /* From Uiverse.io by wilsondesouza */
 ul {
   list-style: none;
